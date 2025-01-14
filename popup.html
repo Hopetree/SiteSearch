@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>站外搜索助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>站外搜索</h2>
+    <div class="search-group">
+        <div class="search-select">
+            <img src="icons/google.svg" id="searchLogo" alt="Logo">
+            <select id="searchEngine">
+                <option value="https://www.google.com/search?q=" data-icon="icons/google.svg">谷歌</option>
+                <option value="https://www.bing.com/search?q=" data-icon="icons/bing.svg">必应</option>
+                <option value="https://www.baidu.com/s?wd=" data-icon="icons/baidu.svg">百度</option>
+            </select>
+        </div>
+        <input type="text" id="searchQuery" placeholder="输入搜索内容">
+        <button id="searchButton">
+            <img src="icons/search.svg" alt="搜索">
+        </button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
