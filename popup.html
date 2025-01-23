@@ -9,6 +9,10 @@
 
 <body>
     <h2>站外搜索</h2>
+    <div class="checkbox-container">
+        <input type="checkbox" id="currentSiteOnly">
+        <label for="currentSiteOnly">当前网站</label>
+    </div>
     <div class="search-group">
         <div class="search-select">
             <img src="icons/google.svg" id="searchLogo" alt="Logo">
@@ -18,8 +22,12 @@
                 <option value="https://www.baidu.com/s?wd=" data-icon="icons/baidu.svg">百度</option>
             </select>
         </div>
-        <input type="text" id="searchQuery" placeholder="输入搜索内容">
-        <button id="searchButton" style="font-size: 1.4rem">🔍</button>
+        <div class="search-container">
+            <div class="search-input-group">
+                <input type="text" id="searchInput" placeholder="输入搜索内容">
+                <button id="searchButton">🔍</button>
+            </div>
+        </div>
     </div>
 
     <script src="popup.js"></script>

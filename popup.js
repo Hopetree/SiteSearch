@@ -81,11 +81,31 @@ function handleSearch() {
 }
 
 // Add event listener for the search button to open the search in a new tab
-searchButton.addEventListener('click', handleSearch);
+document.getElementById('searchButton').addEventListener('click', function() {
+    const searchInput = document.getElementById('searchInput').value;
+    const currentSiteOnly = document.getElementById('currentSiteOnly').checked;
+    const selectedOption = searchEngineSelect.options[searchEngineSelect.selectedIndex];
+    const searchBaseUrl = selectedOption.value;
+    
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        const currentUrl = new URL(tabs[0].url);
+        const searchTerm = searchInput.trim();
+        
+        if (searchTerm) {
+            let searchUrl;
+            if (currentSiteOnly) {
+                searchUrl = searchBaseUrl + encodeURIComponent(`site:${currentUrl.hostname} ${searchTerm}`);
+            } else {
+                searchUrl = searchBaseUrl + encodeURIComponent(searchTerm);
+            }
+            chrome.tabs.create({ url: searchUrl });
+        }
+    });
+});
 
-// Add event listener for the Enter key to trigger the search
-searchQuery.addEventListener('keydown', (event) => {
+// 添加回车键搜索功能
+document.getElementById('searchInput').addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        handleSearch(); // Trigger the same search process when Enter is pressed
+        document.getElementById('searchButton').click();
     }
 });

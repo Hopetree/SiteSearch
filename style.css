@@ -39,6 +39,36 @@ select {
     cursor: pointer;
 }
 
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding: 5px;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.checkbox-container {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0;
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    color: #333;
+}
+
 input[type="text"] {
     flex: 1;
     border: none;
@@ -53,7 +83,42 @@ button {
     border: none;
     padding: 0 10px;
     cursor: pointer;
+    font-size: 20px;  /* 增加 emoji 的大小 */
 }
+
+button img {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-container {
+    margin: 0 0 10px 0;  /* 修改边距，与搜索框保持适当间距 */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 5px;  /* 添加左右内边距，与搜索框对齐 */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0;
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 删除重复的 .checkbox-container 相关样式 */
+
+button {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 删除不再使用的 button img 样式 */
 
 button img {
     width: 20px;
