@@ -20,7 +20,8 @@
 
 ## 插件界面
 
-<img width="575" alt="image" src="https://github.com/user-attachments/assets/30bf9fe3-7fdc-451a-83ad-523355d3f142" />
+<img width="572" alt="image" src="https://github.com/user-attachments/assets/e8bed35f-c303-4cee-bb66-499ad5de09ee" />
+
 
 ## 搜索结果
 
